@@ -101,7 +101,7 @@ describe('PetStore test suit', () => {
     cy.request({
       method: 'GET',
       url: `/pet/${petId}`,
-      failOnStatusCode: false // Позволяет продолжить тест даже если запрос завершается неудачей
+      failOnStatusCode: false // Allows the test to continue even if the request fails
     }).then(response => {
 
       expect(response.status).to.eq(404);
@@ -116,6 +116,9 @@ describe('PetStore test suit', () => {
       expect(response.status).to.be.equal(200);
 
     })
-  })
 
 })
+
+})
+
+
