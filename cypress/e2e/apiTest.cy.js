@@ -99,6 +99,7 @@ describe('PetStore test suit', () => {
     });
 
     cy.request({
+      // verifying object is deleted
       method: 'GET',
       url: `/pet/${petId}`,
       failOnStatusCode: false // Allows the test to continue even if the request fails
@@ -114,6 +115,7 @@ describe('PetStore test suit', () => {
       availabilityStatus = response.body.status;
 
       expect(response.status).to.be.equal(200);
+      expect(response.body.status).to.eq(`${availabilityStatus}`);
 
     })
 
